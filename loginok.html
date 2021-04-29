@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<script src="access/js/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+	<title>登录成功</title>
+</head>
+<body>
+	<a id="alink" href="/" style="visibility: hidden;" >下一步</a>
+	<!--{ffwbms ffa_user_login,vtemp,"uname=".$post['uname']."|pword=".md5(post['pword'])}-->
+	<!---{ffwbms_see $vtemp}-->
+	<!--{if $vtemp["id"]!=""}-->
+		<!--{$uid=$vtemp["id"]}-->
+		<!--{$sid=$vtemp["sid"]}-->
+		<!--{$utype=$vtemp["utype"]}-->
+		<!--{ffwbms ffa_user_login_uconn1,vtemp,"s=".$uid}-->
+		<!--{$uname=$vtemp["s1"]}-->
+		<!--{$uhead=$vtemp["s9"]}-->
+		<!--{$usex=$vtemp["i11"]}-->
+		<script language="JavaScript">
+		var uid_val = '<!--{$uid}-->';
+		var ldm_val = '<!--{$wset["host"]}-->';
+
+		// 增加用户日志数据
+		var htmlobj = $.ajax({
+			type: "POST",
+			url: "loginok_ulog.html",
+			data: { uid: uid_val, ldm: ldm_val, ldt: "" , lip: "" },
+			success: function (result) { htmlobj = result },
+			async: false,
+			cache: false
+		})
+
+
+		<!--{if $sid=="10"}-->
+		//{10}
+		<!--{setcookies "uid",$uid}-->
+		<!--{setcookies "uid2",$sid}-->
+		<!--{setcookies "uid3",$utype}-->
+		<!--{setcookies "uname",$uname}-->
+		<!--{setcookies "uhead",$uhead}-->
+		<!--{setcookies "usex",$usex}-->
+		document.getElementById("alink").href="admin/index.html";
+		document.getElementById("alink").click();
+		<!--{/if}-->
+		</script>
+		
+	<!--{else}-->
+		登录错误，<a href="/">点击返回首页</a>
+	<!--{/if}-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<title>关于我们</title>
+<!--{ffwbms ffa_get_config_db,web_conf,"id=1"}-->
+<!---{ffwbms_see $web_conf}-->
+<!--{ffwbms ffm_art_db,vtemp3,"id=".$get["pid"]}-->
+<meta name="keywords" content="<!--{$web_conf["keywords"]}-->,<!--{$vtemp3["akeys"]}--> " />
+<meta name="description" content="<!--{$web_conf["description"]}-->,<!--{$vtemp3["aabs"]}-->" />
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/media.css"/>
+<link rel="stylesheet" type="text/css" href="css/sty.css"/>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--头部-->
+<!--{include "inc_header.html"}-->
+<!--内容区-->
+<!--面包屑-->
+<div class="mbx">
+	<div class="container">
+		您的位置：<a href="index.html">首页</a> > <a href="javascript:;">关于我们</a>
+	</div>	
+</div>
+
+
+<div class="con container">
+	<ul class="lb">
+		<li><a href="javascript:;">关于我们</a></li>
+	</ul>
+	<div class="tabcon">
+		<!--{$vtemp3["atxt"]}-->
+	</div>
+</div>
+
+<!--底部-->
+<!--{include "inc_bottom.html"}-->
+</body>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                var swiper = new Swiper('.swiper-container',{
+                    autoplay: false,
+                    speed: 1000,
+                    autoplayDisableOnInteraction: false,
+                    loop: true,
+                    centeredSlides: true,
+                    slidesPerView: 2,
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    prevButton: '.swiper-button-prev',
+                    nextButton: '.swiper-button-next',
+                    onInit: function(swiper) {
+                        swiper.slides[2].className = "swiper-slide swiper-slide-active";
+                    },
+                    breakpoints: {
+                        668: {
+                            slidesPerView: 1,
+                        }
+                    }
+                });
+            }
+        
+        
+        </script>
+</html>

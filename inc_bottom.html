@@ -1,0 +1,43 @@
+<footer class="footer hidden-xs">
+	<div class="line_big container text-center">
+		<div class="col-sm-2 col-md-2">
+			<div class="service-box">
+				<h3>首页</h3>
+				<ul class="ser_list">
+					<li><a href="index.html">首页</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-2 col-md-2">
+			<div class="service-box">
+				<h3>产品中心</h3>
+				<ul class="ser_list">
+					<li><a href="products.html">产品展示</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--{ffwbms ffm_art_sort_list,vtemp,"ifyn=2"}-->
+		<!--{/*ffwbms_see $vtemp*/}-->
+		<!--{loop $vtemp $ary}-->
+		<div class="col-sm-2 col-md-2">
+			<div class="service-box">
+				<h3><!--{$ary["sname"]}--></h3>
+				<ul class="ser_list">
+					<li><a href="<!--{$ary["spage"]}-->?pid=<!--{$ary["id"]}-->"><!--{$ary["sname"]}--></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--{/loop}-->
+	</div>
+	<!--{ffwbms ffa_get_config_db,web_conf,"id=1"}-->
+	<div class="copy col-md-12">
+		<div class="text-center">Copyright © 2020  <!--{$web_conf["auth"]}--> 版权所有  </div>
+	</div>
+</footer>
+
+<!--移动端底部导航-->
+<div class="phonefooternav">
+    <div class="copy col-md-12" style="background-color: #6bbb24;">
+    	<div class="text-center">Copyright © 2020  <!--{$web_conf["auth"]}--> 版权所有  </div>
+    </div>
+</div>
